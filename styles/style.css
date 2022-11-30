@@ -11,10 +11,23 @@
   opacity: 0.8;
 }
 
+.container-clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Dosis", sans-serif;
+  font-size: 30px;
+}
+
+#time {
+  font-size: 50px;
+}
+
 .formulario {
   width: 300px;
   margin: auto;
-  margin-top: 50px;
   font-family: "M PLUS 1", sans-serif;
 }
 
@@ -32,19 +45,72 @@ button {
   align-items: center;
 }
 
+#resultado {
+  height: 300px;
+  width: 100%;
+  margin-top: 15px;
+}
+
 .div_carta {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.676);
-  font-family: "M PLUS 1", sans-serif;
-  margin-top: 20px;
+  display: grid;
+  grid-template-areas: "lugar" "datos";
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+  background-color: rgba(0, 0, 0, 0.676);
+  font-family: "Dosis", sans-serif;
+  width: 88%;
+  border-radius: 5px;
+  margin: auto;
+  height: 100%;
 }
 
 .div_carta h1 {
+  font-size: 26px;
+  grid-area: lugar;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 4px;
+  color: white;
+}
+
+.temperatura {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 40px;
-  margin-top: 10px;
+  font-family: "Dosis", sans-serif;
+  color: white;
+  grid-area: datos1;
+}
+
+.sensacion {
+  grid-area: datos2;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+  font-size: 22px;
+}
+
+.datos {
+  grid-area: datos;
+  display: grid;
+  grid-template-areas: "icono datos1" "datos2 datos3";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+}
+
+.datos img {
+  grid-area: icono;
+  width: 100%;
+  height: 100%;
+}
+
+.maxima_minima {
+  color: white;
 }
 
 * {

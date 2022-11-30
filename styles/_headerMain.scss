@@ -10,3 +10,19 @@
     width: 100px;
     opacity: 0.8;
 }
+
+//RELOJ
+
+.container-clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    font-size: 30px;
+}
+
+#time{
+    font-size: 50px;
+}
