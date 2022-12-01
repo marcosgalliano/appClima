@@ -1,5 +1,4 @@
-const kelvin=277.15;
-const kelvinMaxima=277.15;
+
 
 const obtenerClima = () => {
     let ciudad = document.getElementById("ciudad").value;
@@ -13,7 +12,7 @@ const obtenerClima = () => {
 
 const consultarAPI= async(ciudad) =>{
     const apiKEY="bf591ca3aa502b2a1c70a03ecc1713ce";
-    const url=`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},AR&appid=${apiKEY}`
+    const url=`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},AR&appid=${apiKEY}&units=metric`
     console.log(url);
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
@@ -30,18 +29,18 @@ const consultarAPI= async(ciudad) =>{
 
     //DATOS WEATHER
     //TEMPERATURA
-    let temperatura = parseFloat(main.temp-kelvin,10);
+    let temperatura = parseFloat(main.temp,10);
     const temperaturaRedondeada = Math.round(temperatura);
 
     //SENSACION
-    let sensacion = parseFloat(main.feels_like-kelvin,10);
+    let sensacion = parseFloat(main.feels_like,10);
     let sensacionRedondeada = Math.round(sensacion);
 
     //MAXIMA-MINIMA
-    let maxima = parseFloat(main.temp_max-kelvinMaxima,10);
+    let maxima = parseFloat(main.temp_max,10);
     let maximaRedondeada = Math.round(maxima);
 
-    let minima = parseFloat(main.temp_min-kelvin,10);
+    let minima = parseFloat(main.temp_min-9,10);
     let minimaRedondeada = Math.round(minima);
 
     let icono = weather[0].icon;
